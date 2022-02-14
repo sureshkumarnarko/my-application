@@ -17,11 +17,11 @@ const productReducer = (state = initial_state, action) => {
     case LOADING_PRODUCTS:
       return { ...state, loading_products: action.payload };
     case GET_PRODUCTS:
-      return { ...state, products: action.payload };
+      return { ...state, products: action.payload, loading_products: false };
     case LOADING_PRODUCT:
       return { ...state, loading_product: action.payload };
     case GET_PRODUCT_BY_ID:
-      return { ...state, productById: action.payload };
+      return { ...state, productById: action.payload, loading_product: false };
     default:
       return state;
   }

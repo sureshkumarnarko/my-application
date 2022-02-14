@@ -9,8 +9,6 @@ const Products = ({}) => {
   const dispatch = useDispatch();
   const products = useSelector((state) => state.product.products);
 
-  console.log(products);
-
   useEffect(() => {
     dispatch(getProducts());
   }, [dispatch]);
@@ -19,7 +17,7 @@ const Products = ({}) => {
     <div className={classes.root}>
       {products.map((product, index) => (
         <div key={product.id}>
-          <Link className={classes.title} to={`/product/${product.title}`}>
+          <Link className={classes.title} to={`/productInfo/${product.id}`}>
             <h1>
               {index + 1}. {product.title}
             </h1>
